@@ -1,4 +1,4 @@
-/* Default typography, change this to match the design */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
 
 html,
 body {
@@ -6,7 +6,7 @@ body {
 }
 
 body {
-	@apply leading-relaxed xl:text-lg 2xl:text-2xl 2xl:leading-normal;
+	@apply leading-relaxed xl:text-base 2xl:text-lg;
 }
 
 h1,
@@ -15,22 +15,32 @@ h3,
 h4,
 h5,
 h6 {
-	@apply font-display;
+	@apply font-heading;
+
+	em {
+		@apply flex items-center gap-2;
+
+		&:before {
+			content: '';
+			background-image: url('data:image/svg+xml,<svg width="51" height="44" viewBox="0 0 51 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50.8421 16.5694L25.2317 29.2526L27.053 0.731814L50.8421 16.5694Z" fill="%2343B8EA"/><path d="M23.3968 42.2963L1.04946 27.4185L25.1076 15.504L23.3968 42.2963Z" stroke="%23423790"/></svg>');
+			@apply block bg-cover bg-center w-5 md:w-10 h-5 md:h-10;
+		}
+	}
 }
 
 h1,
 .is-h1 {
-	@apply uppercase font-medium text-5xl leading-tight xl:text-8xl 2xl:text-9xl xl:leading-none;
+	@apply font-black text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl !leading-[1.1];
 }
 
 h2,
 .is-h2 {
-	@apply text-3xl md:text-4xl xl:text-5xl xl:leading-none 2xl:text-6xl 2xl:leading-tight;
+	@apply font-black text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl;
 }
 
 h3,
 .is-h3 {
-	@apply leading-tight text-2xl md:text-3xl xl:text-4xl xl:leading-tight 2xl:text-6xl;
+	@apply font-black text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl;
 }
 
 h4,
@@ -44,12 +54,28 @@ h6,
 
 .button,
 .is-button {
-	@apply text-base border rounded-full py-2 px-6 flex items-center gap-4;
+	@apply relative font-heading overflow-hidden text-base border z-10 rounded-full py-2 px-6 flex items-center justify-center uppercase font-normal w-fit gap-4 duration-200 hover:scale-[1.02];
+
+	&.is-white {
+		@apply !border-white !text-white;
+
+		&:hover {
+			@apply hover:bg-fuchsia;
+		}
+	}
+
+	&.is-black {
+		@apply !border-black !text-black;
+
+		&:hover {
+			@apply bg-sky;
+		}
+	}
 }
 
 /* List styles inside WYSIWYG editors */
 .block-content {
-	@apply flex flex-col gap-4 md:gap-6;
+	@apply flex flex-col gap-4 md:gap-7;
 }
 
 .block-content :is(ol, ul) {
@@ -62,4 +88,14 @@ h6,
 
 .block-content ol li {
 	@apply list-decimal;
+}
+
+.supertitle {
+	@apply text-base font-semibold text-fuchsia flex items-center gap-2;
+
+	&:before {
+		content: '';
+		background-image: url('data:image/svg+xml,<svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 6.5L0.25 12.1292L0.250001 0.870834L10 6.5Z" fill="%2343B8EA"/></svg>');
+		@apply bg-cover bg-center w-3 h-3;
+	}
 }

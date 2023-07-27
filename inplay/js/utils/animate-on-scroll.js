@@ -13,9 +13,9 @@ export default function initAnimateOnScroll() {
 		const settings = {
 			scrollTrigger: {
 				trigger: element,
-				start: 'top bottom-=5%',
+				start: 'top bottom-=10%',
 			},
-			y: -16,
+			y: 16,
 			opacity: 0,
 		}
 

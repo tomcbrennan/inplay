@@ -13,13 +13,17 @@ module.exports = {
 			colors: {
 				white: '#FFFFFF',
 				black: '#000000',
-				// brand:
-				// brandLight:
-				// brandDark:
+				sky: '#43B8EA',
+				violet: '#423790',
+				fuchsia: '#EE2D61',
+				offwhite: '#FBF9F4',
+				// bronze: '',
+				// silver: '',
+				// gold: '',
 			},
 			fontFamily: {
-				display: ['Inter', 'sans-serif'],
-				body: ['Inter', 'sans-serif'],
+				heading: ['Figtree', 'sans-serif'],
+				body: ['Roboto', 'sans-serif'],
 			},
 			screens: {
 				sm: '640px',

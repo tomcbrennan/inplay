@@ -1,3 +1,31 @@
-<footer>
-  Footer
+<footer class="bg-gradient-to-br from-[#CC2761] via-[#6A539B] to-[#4D78BC] text-white">
+  <section id="contact" class="container">
+    hello
+  </section>
+	<div class="container">
+		<div class="flex flex-col-reverse md:grid md:grid-cols-3 pb-2 pt-5 md:py-10 border-t border-t-white">
+			<div class="grid place-items-center text-sm block-content md:border-r md:border-r-white max-md:py-5 md:p-10 max-md:border-t max-md:border-t-white">
+				{% include "icons/inplay-icon.twig" with { class: "w-32 h-32" } %}
+				<div class="flex flex-col items-center text-center gap-2">
+					<p>Copyright © 2023
+					</p>
+					<p>InPlay Digital.
+					</p>
+					<p>All Rights Reserved.</p>
+				</div>
+			</div>
+			<div class="block-content md:border-r md:border-r-white max-md:py-5 md:p-10 max-md:border-t max-md:border-t-white">
+				{% for item in menu.get_items %}
+					<a href="{{ item.link }}" class="font-black uppercase font-heading">{{ item.title }}</a>
+				{% endfor %}
+				<a href="/terms-and-conditions" class="font-heading">Terms & Conditions</a>
+				<a href="/privacy-policy" class="font-heading">Privacy Policy</a>
+			</div>
+			<div class="block-content font-heading max-md:py-5 md:p-10">
+				<span>Contact Us</span>
+				<a href="tel:{{ options.phone }}" class="font-black">{{ options.phone }}</a>
+				<a href="mailto:{{ options.email }}" class="font-black">{{ options.email }}</a>
+			</div>
+		</div>
+	</div>
 </footer>

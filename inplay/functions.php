@@ -129,10 +129,7 @@ class InPlay extends Timber\Site
             $context['options'] = get_fields('options');
         }
         // Default menu
-		$context['menu']  = new Timber\Menu();
-
-        // Other menu's - pass the slug to the Menu(). Eg.
-        // $context['footer_menu'] = new Timber\Menu('footer_menu');
+		$context['menu']  = new Timber\Menu('primary');
 
 		$context['site']  = $this;
 
