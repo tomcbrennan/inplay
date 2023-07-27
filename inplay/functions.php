@@ -86,7 +86,7 @@ Timber::$autoescape = false;
  * We're going to configure our theme inside of a subclass of Timber\Site
  * You can move this to its own file and include here via php's include("MySite.php")
  */
-class StartDigital extends Timber\Site
+class InPlay extends Timber\Site
 {
 	/** Add timber support. */
 	public function __construct()
@@ -113,8 +113,8 @@ class StartDigital extends Timber\Site
 	$style_version = filemtime(get_stylesheet_directory() . '/static/style.css') ?: '';
         $script_version = filemtime(get_stylesheet_directory() . '/static/site.js') ?: '';
 
-        wp_enqueue_style('startdigital', get_stylesheet_directory_uri() . '/static/style.css', false, $style_version);
-        wp_enqueue_script('startdigital', get_stylesheet_directory_uri() . '/static/site.js', false, $script_version);
+        wp_enqueue_style('InPlay', get_stylesheet_directory_uri() . '/static/style.css', false, $style_version);
+        wp_enqueue_script('InPlay', get_stylesheet_directory_uri() . '/static/site.js', false, $script_version);
 
         // wp_enqueue_style('adobe-fonts', 'https://use.typekit.net/PASTE_PROJECT_ID_HERE.css');
     }
@@ -162,7 +162,7 @@ class StartDigital extends Timber\Site
 		 */
 		register_nav_menus(
 			array(
-				'primary' => __('Primary Menu', 'startdigital'),
+				'primary' => __('Primary Menu', 'InPlay'),
 			)
 		);
 
@@ -182,4 +182,4 @@ function disable_embeds_filter_oembed_response_data_( $data ) {
     return $data;
 }
 
-new StartDigital();
+new InPlay();
