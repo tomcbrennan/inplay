@@ -28,7 +28,7 @@ jobs:
 
       - name: 🔨 Build Project
         run: |
-          cd startdigital
+          cd inplay
           npm install
           npm run build
           composer install
@@ -36,7 +36,8 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: ftp.perth.agency
-          username: perthage
+          server: 43.250.142.21
+          username: inplay@tomdotcom.au
           password: ${{ secrets.DEV_FTP_PASS }}
-          server-dir: h2ex/wp-content/themes
+          server-dir: inplay/wp-content/themes/
+          protocol: ftps
