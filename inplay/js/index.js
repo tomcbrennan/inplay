@@ -1,6 +1,6 @@
-// import AjaxContent from '../ajax/ajax'
 import animateOnScroll from './utils/animate-on-scroll'
 import initAccordions from './components/accordions'
+import Swiper from 'swiper/bundle'
 
 document.addEventListener('DOMContentLoaded', () => {
 	toggleMenu()
@@ -16,6 +16,23 @@ document.addEventListener('DOMContentLoaded', () => {
 		initAccordions()
 	}
 
+	if (document.querySelector('.products-slider')) {
+		const swiper = new Swiper('.products-slider', {
+			effect: 'coverflow',
+			autoplay: {
+				delay: 4000,
+			},
+			grabCursor: true,
+			centeredSlides: true,
+			slidesPerView: 'auto',
+			loop: true,
+			coverflowEffect: {
+				rotate: 0,
+				depth: 300,
+			},
+		})
+	}
+
 	// REMOVE DEFAULT ACTION AND LINK FROM PARENT NAVIGATION ITEMS
 
 	if (document.querySelector('.no-link')) {
@@ -29,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			})
 		})
 	}
-	
 })
 
 /**

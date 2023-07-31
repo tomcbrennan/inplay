@@ -12,7 +12,7 @@
 			<div class="grid place-items-center relative">
 				{% include "partial/image.twig" with { image: Image(fields.banner.image).src, alt:fields.banner.image.alt } %}
 			</div>
-	</div>
+		</div>
 	</section>
 	<section id="what-do-we-do" class="bg-offwhite">
 		<div class="container relative w-small text-black flex flex-col-reverse gap-10 md:gap-32 md:grid md:grid-cols-2 items-center h-full">
@@ -35,20 +35,36 @@
 			<div class="grid md:grid-cols-3 gap-5 lg:gap-10">
 				{% for item in options.product_tiers %}
 					<div data-animate class="relative block-content p-4 lg:p-8 border border-white rounded-3xl">
-						<div class="grid grid-cols-4 max-sm:flex-col-reverse max-sm:gap-6 justify-between w-full">
-							<div class="{{ item.icon ? 'col-span-3' : 'col-span-4' }} block-content">
+						<div class="block-content">
+							<div class="flex items-center justify-between gap-6">
 								<h3>{{ item.title }}</h3>
-								<div class="block-content">
-									{{ item.benefits }}
-								</div>
+								{% if item.icon %}
+									<img src="{{ item.icon.url }}" alt="{{ item.icon.alt }}">
+								{% endif %}
 							</div>
-							{% if item.icon %}
-								<img src="{{ item.icon.url }}" alt="{{ item.icon.alt }}" class="h-fit col-span-1 w-full">
-							{% endif %}
+							<div class="block-content">
+								{{ item.benefits }}
+							</div>
 						</div>
 					</div>
 				{% endfor %}
 			</div>
+			{% if fields.products.content %}
+				<div class="block-content">
+					{{ fields.products.content }}
+				</div>
+			{% endif %}
+			{% if fields.products.slider %}
+				<div class="products-slider !w-[400px] mx-auto">
+					<div class="swiper-wrapper">
+						{% for item in fields.products.slider %}
+							<div class="swiper-slide">
+								{% include "partial/image.twig" with { image: Image(item.slide).src, alt:item.slide.alt, class: "aspect-1/1 object-cover object-center" } %}
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			{% endif %}
 		</div>
 	</section>
 	<section id="who-are-we" class="bg-offwhite">
