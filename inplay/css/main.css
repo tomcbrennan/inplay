@@ -5,7 +5,7 @@
 @import './typography.css';
 @import 'swiper/swiper.css';
 
-html {
+html, body {
 	@apply scroll-smooth overflow-x-hidden;
 }
 
