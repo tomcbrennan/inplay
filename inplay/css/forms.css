@@ -8,6 +8,10 @@
         }
     }
 
+    input {
+        @apply text-black;
+    }
+
     input[type="submit"] {
         @apply is-button-white cursor-pointer;
     }
