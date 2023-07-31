@@ -1,7 +1,9 @@
 <footer class="bg-gradient-to-br from-[#CC2761] via-[#6A539B] to-[#4D78BC] text-white">
   <section id="contact" class="container flex flex-col-reverse md:grid md:grid-cols-2 gap-10 md:gap-20">
-	{% include "partial/image.twig" with { image: Image(options.footer_image).src, alt:options.footer_image.alt } %}
-	<div class="block-content">
+	{% include "icons/triangle-blue.twig" with { class: "absolute top-20 right-0" } %}
+	{% include "icons/two-triangles-violet.twig" with { class: "absolute top-1/2 left-1/2 -translate-x-2/3 -translate-y-1/2" } %}
+	{% include "partial/image.twig" with { image: Image(options.footer_image).src, alt:options.footer_image.alt, class: "z-10" } %}
+	<div class="block-content relative">
 		<span class="supertitle">Ready to go?</span>
 		<h2>Get in touch.</h2>
 		{{ function('do_shortcode', '[gravityform id="1" title="false" description="false" ajax="true"]') }}

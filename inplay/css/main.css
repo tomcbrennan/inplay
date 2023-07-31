@@ -45,6 +45,6 @@ main section:first-of-type {
 	@apply !text-white;
 }
 
-.products-grid svg {
+.products-grid svg:not(.triangle-blue) {
 	@apply max-lg:!w-16 max-lg:!h-16;
 }
