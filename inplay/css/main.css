@@ -3,6 +3,7 @@
 @import 'tailwindcss/utilities';
 @import './accordion.css';
 @import './typography.css';
+@import './forms.css';
 @import 'swiper/swiper.css';
 
 html, body {
