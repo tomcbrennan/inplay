@@ -10,7 +10,7 @@
 	<div class="container">
 		<div class="flex flex-col-reverse md:grid md:grid-cols-3 pb-2 pt-5 md:py-10 border-t border-t-white">
 			<div class="grid place-items-center text-sm block-content md:border-r md:border-r-white max-md:py-5 md:p-10 max-md:border-t max-md:border-t-white">
-				{% include "icons/inplay-icon.twig" with { class: "w-32 h-32" } %}
+				{% include "icons/inplay-icon.twig" with { class: "w-16 md:w-32 h-16 md:h-32" } %}
 				<div class="flex flex-col items-center text-center gap-2 text-sm">
 					<span>Copyright © 2023</span>
 					<span>InPlay Digital.</span>
@@ -30,13 +30,13 @@
 				<a href="mailto:{{ options.email }}" class="font-black">{{ options.email }}</a>
 				<div class="flex items-center gap-4">
 					{% if options.facebook %}
-						<a href="{{ options.facebook }}" target="_blank">{% include "icons/facebook.twig" %}</a>
+						<a href="{{ options.facebook }}" target="_blank">{% include "icons/facebook.twig" with { class: "max-md:w-8 max-md:h-8" } %}</a>
 					{% endif %}
 					{% if options.instagram %}
-						<a href="{{ options.instagram }}" target="_blank">{% include "icons/instagram.twig" %}</a>
+						<a href="{{ options.instagram }}" target="_blank">{% include "icons/instagram.twig" with { class: "max-md:w-8 max-md:h-8" } %}</a>
 					{% endif %}
 					{% if options.linkedin %}
-						<a href="{{ options.linkedin }}" target="_blank">{% include "icons/linkedin.twig" %}</a>
+						<a href="{{ options.linkedin }}" target="_blank">{% include "icons/linkedin.twig" with { class: "max-md:w-8 max-md:h-8" } %}</a>
 					{% endif %}
 				</div>
 			</div>
