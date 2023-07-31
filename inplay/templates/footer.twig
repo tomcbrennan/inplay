@@ -1,17 +1,20 @@
 <footer class="bg-gradient-to-br from-[#CC2761] via-[#6A539B] to-[#4D78BC] text-white">
-  <section id="contact" class="container">
-    hello
+  <section id="contact" class="container flex flex-col-reverse md:grid md:grid-cols-2 gap-10 md:gap-20">
+	{% include "partial/image.twig" with { image: Image(options.footer_image).src, alt:options.footer_image.alt } %}
+	<div class="block-content">
+		<span class="supertitle">Ready to go?</span>
+		<h2>Get in touch.</h2>
+		{{ function('do_shortcode', '[gravityform id="1" title="false" description="false" ajax="true"]') }}
+	</div>
   </section>
 	<div class="container">
 		<div class="flex flex-col-reverse md:grid md:grid-cols-3 pb-2 pt-5 md:py-10 border-t border-t-white">
 			<div class="grid place-items-center text-sm block-content md:border-r md:border-r-white max-md:py-5 md:p-10 max-md:border-t max-md:border-t-white">
 				{% include "icons/inplay-icon.twig" with { class: "w-32 h-32" } %}
-				<div class="flex flex-col items-center text-center gap-2">
-					<p>Copyright © 2023
-					</p>
-					<p>InPlay Digital.
-					</p>
-					<p>All Rights Reserved.</p>
+				<div class="flex flex-col items-center text-center gap-2 text-sm">
+					<span>Copyright © 2023</span>
+					<span>InPlay Digital.</span>
+					<span>All Rights Reserved.</span>
 				</div>
 			</div>
 			<div class="block-content md:border-r md:border-r-white max-md:py-5 md:p-10 max-md:border-t max-md:border-t-white">
@@ -25,6 +28,17 @@
 				<span>Contact Us</span>
 				<a href="tel:{{ options.phone }}" class="font-black">{{ options.phone }}</a>
 				<a href="mailto:{{ options.email }}" class="font-black">{{ options.email }}</a>
+				<div class="flex items-center gap-4">
+					{% if options.facebook %}
+						<a href="{{ options.facebook }}" target="_blank">{% include "icons/facebook.twig" %}</a>
+					{% endif %}
+					{% if options.instagram %}
+						<a href="{{ options.instagram }}" target="_blank">{% include "icons/instagram.twig" %}</a>
+					{% endif %}
+					{% if options.linkedin %}
+						<a href="{{ options.linkedin }}" target="_blank">{% include "icons/linkedin.twig" %}</a>
+					{% endif %}
+				</div>
 			</div>
 		</div>
 	</div>

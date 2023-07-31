@@ -21,16 +21,22 @@ function sd_allow_custom_classes_to_be_applied_to_headings($init_array) {
     foreach ($headings as $index => $heading) {
         $style_formats[] = array(
             'title' => "$titles[$index]",
-            'selector' => 'h1,h2,h3,h4,h5,h6,span,p',
+            'selector' => 'h1,h2,h3,h4,h5,h6,span,p,.supertitle',
             'classes' => "is-$heading"
         );
     }
 
     // Also add one for buttons
     $style_formats[] = array(
-        'title' => "Button",
+        'title' => "Button (White)",
         'selector' => 'a',
-        'classes' => "is-button"
+        'classes' => "is-button-white"
+    );
+
+    $style_formats[] = array(
+        'title' => "Button (Black)",
+        'selector' => 'a',
+        'classes' => "is-button-black"
     );
 
     // Insert the array, JSON ENCODED, into 'style_formats'

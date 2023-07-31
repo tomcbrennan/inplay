@@ -5,7 +5,7 @@ body {
 	@apply font-body;
 }
 
-body {
+body, .is-p {
 	@apply leading-relaxed xl:text-base 2xl:text-lg;
 }
 
@@ -35,7 +35,11 @@ h1,
 
 h2,
 .is-h2 {
-	@apply font-black text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl;
+	@apply font-black text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl;
+
+	strong {
+		@apply !text-fuchsia;
+	}
 }
 
 h3,
@@ -52,24 +56,23 @@ h6,
 	@apply leading-tight text-xl md:text-2xl xl:text-3xl 2xl:text-4xl;
 }
 
-.button,
-.is-button {
-	@apply relative font-heading overflow-hidden text-base border z-10 rounded-full py-2 px-6 flex items-center justify-center uppercase font-normal w-fit gap-4 duration-200 hover:scale-[1.02];
+.is-p {
+	@apply leading-relaxed !text-base 2xl:!text-lg font-body font-medium;
+}
 
-	&.is-white {
-		@apply !border-white !text-white;
+.button-white, .is-button-white {
+	@apply relative font-heading text-white border-white overflow-hidden text-base border z-10 rounded-full py-2 px-6 flex items-center justify-center uppercase font-normal w-fit gap-4 duration-200 hover:scale-[1.02];
 
-		&:hover {
-			@apply hover:bg-fuchsia;
-		}
+	&:hover {
+		@apply !bg-fuchsia text-white;
 	}
+}
 
-	&.is-black {
-		@apply !border-black !text-black;
+.button-black, .is-button-black {
+	@apply relative font-heading text-black border-black overflow-hidden text-base border z-10 rounded-full py-2 px-6 flex items-center justify-center uppercase font-normal w-fit gap-4 duration-200 hover:scale-[1.02];
 
-		&:hover {
-			@apply bg-sky;
-		}
+	&:hover {
+		@apply !bg-sky !text-black;
 	}
 }
 
@@ -90,8 +93,8 @@ h6,
 	@apply list-decimal;
 }
 
-.supertitle {
-	@apply text-base font-semibold text-fuchsia flex items-center gap-2;
+.supertitle, .is-supertitle {
+	@apply !text-base !font-semibold !text-fuchsia flex items-center gap-2;
 
 	&:before {
 		content: '';

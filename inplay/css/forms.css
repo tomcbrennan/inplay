@@ -1,1 +1,14 @@
-/* Form styles go here */
+.gform_wrapper {
+
+    label {
+        @apply !font-semibold;
+
+        .gfield_required {
+            @apply !hidden;
+        }
+    }
+
+    input[type="submit"] {
+        @apply is-button-white cursor-pointer;
+    }
+}

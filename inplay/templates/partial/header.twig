@@ -1,7 +1,7 @@
 <header class="transition-all duration-300 absolute w-screen top-0 left-0 bg-transparent z-50">
 	<div class="container">
-		<div data-navigation class="py-3 lg:py-1 xl:py-4 border-b border-b-white z-20 w-full flex items-center justify-between transition-all duration-300">
-			<a href="{{ site.url }}" rel="home">{% include 'icons/logo.twig' %}</a>
+		<div data-navigation class="border-b border-b-white z-20 w-full flex items-center justify-between transition-all duration-300">
+			<a href="{{ site.url }}" rel="home">{% include 'icons/logo.twig' with { class: "w-36 md:w-48 xl:w-60 xl:h-full" } %}</a>
 			<nav id="nav-main" role="navigation">
 				{% include 'menu.twig' with {
 				items: menu.get_items

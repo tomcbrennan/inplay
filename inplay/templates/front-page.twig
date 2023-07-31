@@ -1,34 +1,33 @@
-{% extends 'base.twig' %}
+{% extends 'page.twig' %}
 
 {% block content %}
-	<section id="home" class="bg-gradient-to-br from-[#4D78BC] via-[#6A539B] to-[#CC2761] pt-24 lg:pt-36 xl:pt-48">
-		<div class="container text-white grid max-md:gap-10 md:grid-cols-2 items-center h-full">
-			<div class="block-content">
-				<h1>Engage
-					<br/><span class="font-normal">with your community</span>
-				</h1>
-				<h2 class="!text-base !font-semibold">Lorem ipsum dolor sit amet consectetur. Suspendisse orci risus malesuada dui ac consectetur. Pulvinar donec in proin malesuada sit mi nec aliquet. Metus quis proin scelerisque aliquam ultricies. Id cras sed libero etiam interdum.</h2>
-				<a href="#products" class="button is-white">View products</a>
+	<section id="home" class="bg-gradient-to-br from-[#4D78BC] via-[#6A539B] to-[#CC2761]">
+		<div class="container relative text-white grid gap-10 md:gap-20 max-md:gap-10 md:grid-cols-2 items-center h-full">
+			{% include "icons/triangle-violet.twig" with { class: "absolute -top-3 -left-28 rotate-[25deg]" } %}
+			{% include "icons/triangle-blue.twig" with { class: "absolute left-1/2 top-20 -translate-x-1/2" } %}
+			{% include "icons/triangle-fucshia.twig" with { class: "absolute left-1/4 top-1/2 -translate-x-1/4" } %}
+			<div data-animate-stagger class="block-content relative">
+				{{ fields.banner.content }}
 			</div>
-			<div class="grid place-items-center">image</div>
-		</div>
+			<div class="grid place-items-center relative">
+				{% include "partial/image.twig" with { image: Image(fields.banner.image).src, alt:fields.banner.image.alt } %}
+			</div>
+	</div>
 	</section>
-	<section id="what-we-do" class="bg-offwhite">
-		<div class="container text-black flex flex-col-reverse max-md:gap-10 md:grid md:grid-cols-2 items-center h-full">
-			<div class="grid place-items-center">image</div>
-			<div class="block-content">
-				<span class="supertitle">What do we do?</span>
-				<h2 class="text-violet">We help
-					<span class="text-fuchsia">elevate</span>
-					your community engagement with our digital product range.</h1>
-				<p>Lorem ipsum dolor sit amet consectetur. Suspendisse orci risus malesuada dui ac consectetur. Pulvinar donec in proin malesuada sit mi nec aliquet. Metus quis proin scelerisque aliquam ultricies. Id cras sed libero etiam interdum.</p>
-				<a href="#about" class="button is-black">More about us</a>
+	<section id="what-do-we-do" class="bg-offwhite">
+		<div class="container relative w-small text-black flex flex-col-reverse gap-10 md:gap-32 md:grid md:grid-cols-2 items-center h-full">
+			{% include "icons/triangle-violet.twig" with { class: "absolute -top-3 -right-10" } %}
+			<div class="grid place-items-center relative">
+				{% include "partial/image.twig" with { image: Image(fields.what_do_we_do.image).src, alt:fields.what_do_we_do.image.alt } %}
+			</div>
+			<div data-animate-stagger class="block-content relative">
+				{{ fields.what_do_we_do.content }}
 			</div>
 		</div>
 	</section>
 	<section id="products" class="bg-gradient-to-br from-[#CC2761] via-[#6A539B] to-[#4D78BC]">
 		<div class="container text-white flex flex-col gap-7 md:gap-14">
-			<h3 class="play uppercase">
+			<h3 data-animate-left class="play uppercase">
 				<em>Next Level
 					<span class="!font-normal">Social Range</span>
 				</em>
@@ -36,17 +35,29 @@
 			<div class="grid md:grid-cols-3 gap-5 lg:gap-10">
 				{% for item in options.product_tiers %}
 					<div data-animate class="relative block-content p-4 lg:p-8 border border-white rounded-3xl">
-						<div class="flex max-sm:flex-col-reverse sm:items-center max-sm:gap-6 justify-between w-full">
-							<h3 class="w-3/4">{{ item.title }}</h3>
+						<div class="grid grid-cols-4 max-sm:flex-col-reverse max-sm:gap-6 justify-between w-full">
+							<div class="{{ item.icon ? 'col-span-3' : 'col-span-4' }} block-content">
+								<h3>{{ item.title }}</h3>
+								<div class="block-content">
+									{{ item.benefits }}
+								</div>
+							</div>
 							{% if item.icon %}
-								<img src="{{ item.icon.url }}" alt="{{ item.icon.alt }}" class="h-fit">
+								<img src="{{ item.icon.url }}" alt="{{ item.icon.alt }}" class="h-fit col-span-1 w-full">
 							{% endif %}
-						</div>
-						<div class="w-3/4 block-content">
-							{{ item.benefits }}
 						</div>
 					</div>
 				{% endfor %}
+			</div>
+		</div>
+	</section>
+	<section id="who-are-we" class="bg-offwhite">
+		<div class="container relative w-small text-black flex flex-col gap-10 md:gap-32 md:grid md:grid-cols-2 items-center h-full">
+			<div data-animate-stagger class="block-content relative">
+				{{ fields.who_are_we.content }}
+			</div>
+			<div class="grid place-items-center relative">
+				{% include "partial/image.twig" with { image: Image(fields.who_are_we.image).src, alt:fields.who_are_we.image.alt } %}
 			</div>
 		</div>
 	</section>

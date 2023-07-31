@@ -2,10 +2,6 @@
 @import 'tailwindcss/utilities';
 @import './typography.css';
 
-body {
-	@apply font-sans;
-}
-
 h1,
 .is-h1,
 h2,
