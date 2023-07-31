@@ -44,3 +44,7 @@ main section:first-of-type {
 #contact span.supertitle {
 	@apply !text-white;
 }
+
+.products-grid svg {
+	@apply max-lg:!w-16 max-lg:!h-16;
+}
