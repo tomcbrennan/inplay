@@ -38,7 +38,7 @@ section {
 }
 
 main section:first-of-type {
-	@apply !pt-24 lg:!pt-36 xl:!pt-48;
+	@apply !pt-24 md:!pt-36 xl:!pt-48;
 }
 
 #contact span.supertitle {

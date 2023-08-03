@@ -1,6 +1,6 @@
 {% if menu %}
 	{# Desktop #}
-	<ul class="relative z-10 items-center hidden lg:flex">
+	<ul class="relative z-10 items-center hidden md:flex">
 		{% for item in items %}
 			<li class="{{ item.classes|join(' ') }} relative flex items-center gap-1 group p-6">
 				<a target="{{ item.target }}" href="{{ item.link }}" class="text-white font-heading font-black uppercase transition-all duration-200 ease hover:scale-[0.95]">
@@ -21,8 +21,8 @@
 		{% endfor %}
 	</ul>
 	{# Mobile #}
-	<button data-toggle-menu class="lg:hidden grid place-items-center">{{ include('templates/icons/hamburger.twig') }}</button>
-	<ul data-menu class="bg-white flex flex-col gap-6 p-12 z-30 fixed top-0 right-0 w-full h-screen max-w-lg transform transition duration-300 ease lg:hidden">
+	{# <button data-toggle-menu class="lg:hidden grid place-items-center">{{ include('templates/icons/hamburger.twig') }}</button> #}
+	{# <ul data-menu class="bg-white flex flex-col gap-6 p-12 z-30 fixed top-0 right-0 w-full h-screen max-w-lg transform transition duration-300 ease lg:hidden">
 		<button data-toggle-menu class="lg:hidden">{{ include('templates/icons/cross.twig') }}</button>
 		<div class="mt-5 flex-grow flex flex-col">
 			{% for item in items %}
@@ -48,5 +48,10 @@
 				</div>
 			{% endfor %}
 		</div>
-	</ul>
+	</ul> #}
+	<div class="md:hidden fixed bottom-0 left-0 flex items-center w-full">
+		{% for item in items %}
+			<a data-animate href="{{ item.link }}" class="font-heading font-medium shadow-lg flex items-center justify-center text-white bg-violet w-screen border-r-white border-r border-opacity-20 text-sm py-4 text-center">{{ item.title }}</a>
+		{% endfor %}
+	</div>
 {% endif %}
