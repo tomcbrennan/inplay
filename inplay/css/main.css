@@ -48,3 +48,9 @@ main section:first-of-type {
 .products-grid svg:not(.triangle-blue) {
 	@apply max-lg:!w-16 max-lg:!h-16;
 }
+
+.team-member:nth-child(2n) {
+	.team-member-content {
+		@apply md:order-2;
+	}
+}

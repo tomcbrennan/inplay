@@ -14,12 +14,12 @@
 		</div>
 	</section>
 	<section id="what-do-we-do" class="bg-offwhite">
-		<div class="container relative w-small text-black flex flex-col-reverse gap-10 md:gap-32 md:grid md:grid-cols-2 items-center h-full">
+		<div class="container relative text-black flex flex-col-reverse gap-10 md:gap-32 md:grid md:grid-cols-3 items-center h-full">
 			{% include "icons/triangle-violet.twig" with { class: "absolute -top-3 -right-10" } %}
-			<div class="grid place-items-center relative">
+			<div class="md:col-span-1 grid place-items-center relative">
 				{% include "partial/image.twig" with { image: Image(fields.what_do_we_do.image).src, alt:fields.what_do_we_do.image.alt } %}
 			</div>
-			<div data-animate-stagger class="block-content relative">
+			<div data-animate-stagger class="md:col-span-2 block-content relative">
 				{{ fields.what_do_we_do.content }}
 			</div>
 		</div>
@@ -68,13 +68,20 @@
 		</div>
 	</section>
 	<section id="who-are-we" class="bg-offwhite">
-		<div class="container relative w-small text-black flex flex-col gap-10 md:gap-32 md:grid md:grid-cols-2 items-center h-full">
-			<div data-animate-stagger class="block-content relative">
+		<div class="container relative w-small text-black flex flex-col gap-10">
+			<div class="block-content">
 				{{ fields.who_are_we.content }}
 			</div>
-			<div class="grid place-items-center relative">
-				{% include "partial/image.twig" with { image: Image(fields.who_are_we.image).src, alt:fields.who_are_we.image.alt } %}
-			</div>
+			{% for item in fields.who_are_we.team %}
+				<div class="team-member flex flex-col gap-10 md:gap-32 md:grid md:grid-cols-3 items-center h-full">
+					<div data-animate-stagger class="team-member-content md:col-span-2 flex flex-col gap-3 relative">
+						{{ item.content }}
+					</div>
+					<div class="team-member-image md:col-span-1 grid place-items-center relative">
+						{% include "partial/image.twig" with { image: Image(item.image).src, alt:item.image.alt, class: "aspect-1/1 object-cover object-center" } %}
+					</div>
+				</div>
+			{% endfor %}
 		</div>
 	</section>
 {% endblock %}

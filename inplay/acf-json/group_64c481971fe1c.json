@@ -301,7 +301,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_64c4897cc65f7",
+                    "key": "field_64d355dd268cf",
                     "label": "Content",
                     "name": "content",
                     "aria-label": "",
@@ -321,11 +321,11 @@
                     "delay": 0
                 },
                 {
-                    "key": "field_64c48981c65f8",
-                    "label": "Image",
-                    "name": "image",
+                    "key": "field_64d3551174f61",
+                    "label": "Team",
+                    "name": "team",
                     "aria-label": "",
-                    "type": "image",
+                    "type": "repeater",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -334,16 +334,62 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "preview_size": "medium"
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add Row",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_64c4897cc65f7",
+                            "label": "Content",
+                            "name": "content",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0,
+                            "parent_repeater": "field_64d3551174f61"
+                        },
+                        {
+                            "key": "field_64c48981c65f8",
+                            "label": "Image",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium",
+                            "parent_repeater": "field_64d3551174f61"
+                        }
+                    ]
                 }
             ]
         }
@@ -366,5 +412,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1690804504
+    "modified": 1691571688
 }
