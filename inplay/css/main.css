@@ -49,8 +49,14 @@ main section:first-of-type {
 	@apply max-lg:!w-16 max-lg:!h-16;
 }
 
-.team-member:nth-child(2n) {
+.team-member:nth-child(2n-1) {
 	.team-member-content {
+		@apply md:order-2;
+	}
+}
+
+.product-tier:nth-child(2n-1) {
+	.product-tier-content {
 		@apply md:order-2;
 	}
 }

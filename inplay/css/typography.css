@@ -18,7 +18,7 @@ h6 {
 	@apply font-heading;
 
 	em {
-		@apply flex items-center gap-2;
+		@apply flex max-sm:flex-col items-start sm:items-center gap-2;
 
 		&:before {
 			content: '';

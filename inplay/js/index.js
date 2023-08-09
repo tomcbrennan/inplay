@@ -17,19 +17,23 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	if (document.querySelector('.products-slider')) {
-		const swiper = new Swiper('.products-slider', {
-			effect: 'coverflow',
-			autoplay: {
-				delay: 4000,
-			},
-			grabCursor: true,
-			centeredSlides: true,
-			slidesPerView: 'auto',
-			loop: true,
-			coverflowEffect: {
-				rotate: 0,
-				depth: 350,
-			},
+		const productSliders = document.querySelectorAll('.products-slider')
+
+		productSliders.forEach((slider) => {
+			const swiper = new Swiper(slider, {
+				effect: 'coverflow',
+				autoplay: {
+					delay: 4000,
+				},
+				grabCursor: true,
+				centeredSlides: true,
+				slidesPerView: 'auto',
+				loop: true,
+				coverflowEffect: {
+					rotate: 0,
+					depth: 350,
+				},
+			})
 		})
 	}
 
