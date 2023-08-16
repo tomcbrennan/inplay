@@ -23,7 +23,7 @@ h6 {
 		&:before {
 			content: '';
 			background-image: url('data:image/svg+xml,<svg width="51" height="44" viewBox="0 0 51 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50.8421 16.5694L25.2317 29.2526L27.053 0.731814L50.8421 16.5694Z" fill="%2343B8EA"/><path d="M23.3968 42.2963L1.04946 27.4185L25.1076 15.504L23.3968 42.2963Z" stroke="%23423790"/></svg>');
-			@apply block bg-cover bg-center w-5 md:w-10 h-5 md:h-10;
+			@apply block bg-contain bg-no-repeat bg-center w-8 md:w-12 h-8 md:h-12;
 		}
 	}
 }
