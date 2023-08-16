@@ -60,3 +60,7 @@ main section:first-of-type {
 		@apply md:order-2;
 	}
 }
+
+.menu-link {
+	@apply transition-all duration-200 origin-center hover:scale-[0.95] w-fit;
+}

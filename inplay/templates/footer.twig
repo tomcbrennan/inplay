@@ -17,22 +17,22 @@
 					<span>Copyright © 2023</span>
 					<span>InPlay Digital.</span>
 					<span>All Rights Reserved.</span>
-					<a href="https://tomdotcom.au" target="_blank" class="mt-2 underline">Built by Tom</a>
+					<a href="https://tomdotcom.au" target="_blank" class="menu-link mt-2 !font-heading font-black uppercase">Built by Tom</a>
 				</div>
 			</div>
 			<div class="block-content md:border-r md:border-r-white max-md:py-5 md:p-10 max-md:border-t max-md:border-t-white">
 				{% for item in menu.get_items %}
-					<a href="{{ item.link }}" class="font-black uppercase font-heading">{{ item.title }}</a>
+					<a href="{{ item.link }}" class="menu-link font-black uppercase font-heading">{{ item.title }}</a>
 				{% endfor %}
-				<a href="/terms-and-conditions" class="font-heading font-black uppercase">Terms & Conditions</a>
+				<a href="/terms-and-conditions" class="menu-link font-heading font-black uppercase">Terms & Conditions</a>
 			</div>
 			<div class="block-content font-heading max-md:py-5 md:p-10">
 				<span>Contact Us</span>
 				{% if options.phone %}
-					<a href="tel:{{ options.phone }}" class="font-black">{{ options.phone }}</a>
+					<a href="tel:{{ options.phone }}" class="menu-link font-black">{{ options.phone }}</a>
 				{% endif %}
 				{% if options.email %}
-					<a href="mailto:{{ options.email }}" class="font-black">{{ options.email }}</a>
+					<a href="mailto:{{ options.email }}" class="menu-link font-black">{{ options.email }}</a>
 				{% endif %}
 				<div class="flex items-center gap-4">
 					{% if options.facebook %}

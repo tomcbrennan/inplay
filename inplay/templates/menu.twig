@@ -3,7 +3,7 @@
 	<ul class="relative z-10 items-center hidden md:flex">
 		{% for item in items %}
 			<li class="{{ item.classes|join(' ') }} relative flex items-center gap-1 group p-6">
-				<a target="{{ item.target }}" href="{{ item.link }}" class="text-white font-heading font-black uppercase transition-all duration-200 ease hover:scale-[0.95]">
+				<a target="{{ item.target }}" href="{{ item.link }}" class="menu-link text-white font-heading font-black uppercase">
 					{{ item.title }}
 				</a>
 				{% if item.children %}
