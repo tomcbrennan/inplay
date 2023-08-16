@@ -293,6 +293,27 @@
                     "rows_per_page": 20,
                     "sub_fields": [
                         {
+                            "key": "field_64dc968b053d1",
+                            "label": "Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_64d3551174f61"
+                        },
+                        {
                             "key": "field_64c4897cc65f7",
                             "label": "Content",
                             "name": "content",
@@ -362,5 +383,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1691574789
+    "modified": 1692178074
 }

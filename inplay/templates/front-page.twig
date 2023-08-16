@@ -68,8 +68,9 @@
 				{{ fields.who_are_we.content }}
 			</div>
 			{% for item in fields.who_are_we.team %}
-				<div class="team-member flex mb-6 flex-col gap-10 md:gap-32 md:grid md:grid-cols-3 items-center h-full">
+				<div class="team-member flex mb-6 flex-col gap-10 md:gap-20 md:grid md:grid-cols-3 items-center h-full">
 					<div data-animate-stagger class="team-member-content md:col-span-2 flex flex-col gap-3 relative">
+						<h4 class="!font-black !font-heading">{{ item.title }}</h4>
 						{{ item.content }}
 					</div>
 					<div class="team-member-image md:col-span-1 grid place-items-center relative">
