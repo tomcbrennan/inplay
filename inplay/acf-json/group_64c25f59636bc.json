@@ -60,6 +60,26 @@
             "append": ""
         },
         {
+            "key": "field_64fdd3c8c7ba3",
+            "label": "Terms and Conditions Link",
+            "name": "terms_and_conditions_link",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_64c7939f67133",
             "label": "Social Media",
             "name": "",
@@ -309,5 +329,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1691574946
+    "modified": 1694356443
 }
