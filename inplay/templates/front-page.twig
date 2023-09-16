@@ -55,11 +55,17 @@
 					</div>
 				{% endfor %}
 			</div>
-			{% if fields.products.content %}
-				<div class="block-content">
-					{{ fields.products.content }}
-				</div>
-			{% endif %}
+			<div class="flex max-md:flex-col md:items-end justify-between gap-6">
+				{% if fields.products.content %}
+					<div class="block-content">
+						{{ fields.products.content }}
+					</div>
+				{% endif %}
+				{% if fields.brochure_link %}
+					<a href="{{ fields.brochure_link }}" target="_blank" class="button-white">View our brochure</a>
+				{% endif %}
+
+			</div>
 		</div>
 	</section>
 	<section id="who-are-we" class="bg-offwhite">
